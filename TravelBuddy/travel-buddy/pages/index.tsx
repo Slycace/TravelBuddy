@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Script from 'next/script'
 import Navbar from '../Components/organisms/navbar'
 import TravelSearch from '../Components/organisms/travelsearch'
 
@@ -10,5 +11,6 @@ const Home: NextPage = () => {
       </div>
   )
 }
+
 
 export default Home
