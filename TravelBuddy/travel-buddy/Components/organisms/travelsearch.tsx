@@ -10,6 +10,8 @@ export default function TravelImage() {
     w={'100vw'}
     objectFit={'cover'}
     direction={'column'}
+    wrap={'wrap'}
+    justifyContent={'center'}
     >
       <WhereTooSearch/>
     </Flex>
