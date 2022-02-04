@@ -49,15 +49,10 @@ See the open issues for a full list of proposed features (and known issues).
 
 (back to top)
 
-Versioning
-We use Semantic Versioning for versioning. For the versions available, see the tags on this repository.
-
-(back to top)
-
 Contact
-Michael Chan - WuksGG - michael@struxlab.com
+Mason Powell - Slycace - Mpowell@struxlab.com
 
-Project Link: https://github.com/StruxLab/JobBuddy
+Project Link: https://github.com/Slycace/TravelBuddy
 
 (back to top)
 
