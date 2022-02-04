@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from '@chakra-ui/react';
 import WhereTooSearch from '../molecules/wheretoosearch';
 
-export default function TravelImage() {
+export default function TravelSearch() {
   return (
     <Flex backgroundImage={'JapanTouristSpot.jpg'}
     backgroundSize={'100% 100%'}
