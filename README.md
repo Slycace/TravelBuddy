@@ -33,9 +33,8 @@
 
 ## About the Project
 
-A travel app designed to help users plan out their routes through an interact ui built on top of google maps. User's can search their locations on google maps, rendering 
-out clickable cards for them to select. Users will be able to see their cards linked up in their own personal  travel route created by Travel buddy and have access to the to the
-adresses, phone numbers, and times of operation for each location they selected.
+Traveling Application where users can't create their own routes built on top of google maps api. The users are able to pull up their own linked up travel route and pull up
+the names, adresses, phone numbers, and hours of operation for the spots they've selected.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
