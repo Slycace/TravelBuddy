@@ -6,7 +6,8 @@ export default function CitiesAndPlaces() {
 
   return(
     <HStack height={50} width={'inherit'} borderWidth={1} borderColor={'blue'}>
-
+        <LocationDrownDown/>
+        <LocationDrownDown/>
     </HStack>
   )
 }
