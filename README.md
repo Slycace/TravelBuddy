@@ -33,8 +33,9 @@
 
 ## About the Project
 
-Traveling Application where users can't create their own routes built on top of google maps api. The users are able to pull up their own linked up travel route and pull up
-the names, adresses, phone numbers, and hours of operation for the spots they've selected.
+TravelBuddy is an interactive ui built on on top of the google maps api. Designed to make users life easier, the user can search up the cities and spots they want to travel too
+and add them to their own route. The route will then display the cities/locations linked up together on their own personal tailored travel map. In addition the users can select
+these spots and pull up the names, addresses, phone numbers, and hours of service for each location. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
