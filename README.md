@@ -1,66 +1,82 @@
+<div id="top"></div>
+
+<table>
+<tr>
+<td>
+⚠️
+</td>
+<td align="center">
+<br />
+<span><b>
+  This project is currently being developed. <br />
+</b></span>
+<img width="881" height="0">
+</td>
+</tr>
+</table>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+  </a>
+
+  <h3 align="center">TravelBuddy</h3>
+
+  <p align="center">
+    The travel app designed to make your travels easier!
+    <br />
+    <br />
+    <br />
+  </p>
+</div>
+
+## About the Project
+
+TravelBuddy is an interactive ui built on on top of the google maps api. Designed to make users life easier, the user can search up the cities and spots they want to travel too
+and add them to their own route. The route will then display the cities/locations linked up together on their own personal tailored travel map. In addition the users can select
+these spots and pull up the names, addresses, phone numbers, and hours of service for each location. 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+* [Next.js](https://nextjs.org/)
+* [React.js](https://reactjs.org/)
+* [Chakra ui](https://chakra-ui.com/)
+* [TypeSCript](https://www.typescriptlang.org/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Getting Started
+
+### Prerequisites
+
+* [Node.js v14+](https://nodejs.org/en/)
+* [Mongodob](https://www.mongodb.com/)
 
 
 
-TravelBuddy
-The solution to your travel plans.
 
 
-View Demo · Report Bug · Request Feature
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-About the Project
+<!-- ## Contributing -->
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This product at its core is a Google Chrome extension connected with a Next.js API and PostgreSQL database, which allows for not only an organized view on the JobBuddy dashboard, but also right from each of the job boards that are supported.
+## Contact
 
-(back to top)
+Mason Powell - [Slycace](https://github.com/Slycace) - mPowell@struxlab.com
 
-Built With
-Next.js
-React.js
-React Native
-MUI (Material UI)
-Manifest V3 for Chrome Extensions
-Supported & Planned Job Boards
- Indeed.com
- LinkedIn.com
- Google for Jobs
- Glassdoor.com
- Monster.com
- ZipRecruiter.com
-(back to top)
+Project Link: https://github.com/StruxLab/TravelBuddy
 
-Getting Started
-Prerequisites
-Node.js v14+
-PostgreSQL 11+
-Installation
-To start, compile and build out the Chrome extension's content scripts by running the following command from the project's root directory: npm run dev.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-(back to top)
+<!-- ## License -->
 
-Roadmap
- Build out Chrome Extension for LinkedIn
- Establish SQL Schema
- Build out API routes and models
- Connect Chrome Extension with API
- Build out Next.js web application
- Build out React Native application
-See the open issues for a full list of proposed features (and known issues).
+## Acknowledgments
 
-(back to top)
+* [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
-Versioning
-We use Semantic Versioning for versioning. For the versions available, see the tags on this repository.
-
-(back to top)
-
-Contact
-Michael Chan - WuksGG - michael@struxlab.com
-
-Project Link: https://github.com/StruxLab/JobBuddy
-
-(back to top)
-
-Acknowledgments
-othneildrew/Best-README-Template
-(back to top)
+<p align="right">(<a href="#top">back to top</a>)</p>
