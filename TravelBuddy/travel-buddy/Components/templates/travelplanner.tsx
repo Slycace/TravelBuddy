@@ -2,6 +2,7 @@ import React from "react";
 import { HStack, VStack, Box, Spacer, Flex } from "@chakra-ui/react";
 import Navbar from "../organisms/navbar";
 import CitiesAndPlaces from "../organisms/citiesandplaces";
+import TravlerMap from "../atoms/map";
 
 export default function PlannerTemplate() {
 
@@ -29,7 +30,7 @@ export default function PlannerTemplate() {
             </Flex>
             <Flex direction={'column'} h={'90%'} borderColor={'blue'}
             borderWidth={'1px'}>
-            plugin4
+            <TravlerMap/>
             </Flex>
           </Flex>
         </Flex>
