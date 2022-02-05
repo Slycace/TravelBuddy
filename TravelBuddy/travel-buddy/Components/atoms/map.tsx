@@ -1,21 +1,28 @@
-import React, { useRef, MutableRefObject, useEffect} from 'react';
-import { Box } from '@chakra-ui/react'
+import React from 'react';
+import { GoogleMap, Marker, InfoBox } from '@react-google-maps/api';
+import { Box } from '@chakra-ui/react';
+import BoxMarker from './boxmarker';
 
+export default function Map() {
 
-export default function TravlerMap() {
+  return (
 
-  let inputElement:MutableRefObject<HTMLInputElement| null | any> = useRef(null);
-  useEffect(() => {
-    let map: google.maps.Map = new google.maps.Map(document.getElementById('travelerMap') as HTMLElement, {
-      center: { lat: -34, lng: 150},
-      zoom: 10,
-    })
-  })
-
-  return(
-    <Box id='travelerMap' w={'inherit'} h={'inherit'} ref={inputElement}>
-        testing
-    </Box>
+      <GoogleMap
+        mapContainerStyle={{width:'inherit',
+      height: 'inherit'}}
+        center={{lat:35.6762,
+        lng:139.6503,}}
+        zoom={10}
+      >
+          <InfoBox
+          position={{lat:35.6762,
+            lng:139.6503,}}>
+              <BoxMarker/>
+          </InfoBox>
+        <></>
+      </GoogleMap>
 
   )
+
+
 }
