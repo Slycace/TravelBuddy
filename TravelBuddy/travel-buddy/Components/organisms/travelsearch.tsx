@@ -4,7 +4,8 @@ import WhereTooSearch from '../molecules/wheretoosearch';
 
 export default function TravelSearch() {
   return (
-    <Flex backgroundImage={'JapanTouristSpot.jpg'}
+    <Flex
+    backgroundImage={'JapanTouristSpot.jpg'}
     backgroundSize={'100% 100%'}
     h={'90vh'}
     w={'100vw'}

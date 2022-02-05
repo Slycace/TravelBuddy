@@ -1,18 +1,23 @@
 import React from "react";
-import { HStack, Spacer } from "@chakra-ui/react";
+import { HStack, Spacer, VStack, Flex } from "@chakra-ui/react";
 import LocationDrownDown from "../molecules/locationdropdown";
 
 export default function CitiesAndPlaces() {
 
   return(
-    <HStack
-    height={'inherit'}
-    width={'inherit'}
-    borderWidth={1}
-    borderColor={'blue'}
-    justifyContent={'space-around'}>
-        <LocationDrownDown/>
-        <LocationDrownDown/>
-    </HStack>
+      <Flex
+      className="citiesandplacesDiv"
+      alignItems={'center'}
+      justifyContent={'space-evenly'}
+      backgroundColor={'purple'}
+      width='100%'
+      height='100%'
+      >
+      <LocationDrownDown/>
+      <LocationDrownDown/>
+
+      </Flex>
+
+
   )
 }

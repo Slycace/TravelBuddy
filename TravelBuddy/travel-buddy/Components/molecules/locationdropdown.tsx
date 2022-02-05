@@ -9,7 +9,10 @@ import { FaRegListAlt } from 'react-icons/fa'
 export default function LocationDrownDown() {
 
   return (
-    <Select placeholder='Select City' w={'35%'}>
+    <Select placeholder='Select City' w={'35%'}
+    backgroundColor={'white'}
+    borderWidth={'2px'}
+    borderColor={'gray'}>
     <option value='option1'>Option 1</option>
     <option value='option2'>Option 2</option>
     <option value='option3'>Option 3</option>
