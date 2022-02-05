@@ -1,33 +1,36 @@
 import React from "react";
-import { HStack, VStack, Box, Spacer } from "@chakra-ui/react";
+import { HStack, VStack, Box, Spacer, Flex } from "@chakra-ui/react";
 import Navbar from "../organisms/navbar";
 import CitiesAndPlaces from "../organisms/citiesandplaces";
 
 export default function PlannerTemplate() {
 
   return(
-    <VStack className="windowDiv">
-    <Box height={50} borderWidth={1} borderColor={'blue'} w={'100vw'} className="navDiv">
-      <Navbar/>
-    </Box>
-    <HStack className="sidebarandMaps Div"
-    borderWidth={1}
-    borderColor={'blue'}
-    h={'90vh'}
-    w={'100vw'}
-    direction={'row'}
-    >
-    <VStack className="sideBarDiv" borderWidth={1} borderColor={'blue'} h={'90vh'} w={'30vw'}>
-
-    </VStack>
-    <VStack className="mapCitiesLocationsDiv" borderWidth={1} borderColor={'blue'} h={'90vh'} w={'70vw'}>
-      <HStack borderWidth={1} borderColor={'blue'} w={'inherit'} h={50}>
-          <CitiesAndPlaces/>
-      </HStack>
-
-    </VStack>
-    </HStack>
-    </VStack>
+      <Flex direction={'column'} className="mainDiv">
+        <Box h={50} borderWidth={1} borderColor={'blue'} >
+            navbar
+        </Box>
+        <Flex direction={'row'} borderWidth={1} borderColor={'blue'} h={'90vh'}>
+          <Flex direction={'column'} width={'25vw'} borderColor={'blue'} borderWidth={1} >
+            <Flex direction={'column'} h={'25%'} borderWidth={1} borderColor={'blue'}>
+                plugin1
+            </Flex>
+            <Flex direction={'column'} h={'75%'} borderWidth={1} borderColor={'blue'}>
+                plugin2
+            </Flex>
+          </Flex>
+          <Flex direction={'column'} width={'75vw'} borderColor={'blue'} borderWidth={1} >
+            <Flex direction={'column'} h={'15%'} borderColor={'blue'}
+            borderWidth={'1px'}>
+                  plugin3
+            </Flex>
+            <Flex direction={'column'} h={'85%'} borderColor={'blue'}
+            borderWidth={'1px'}>
+                  plugin4
+            </Flex>
+          </Flex>
+        </Flex>
+      </Flex>
 
   )
 }

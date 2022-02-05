@@ -1,37 +1,18 @@
 import React from "react";
 import {
-  Button,
-  HStack,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
+ Select
 } from '@chakra-ui/react'
+import { FaRegListAlt } from 'react-icons/fa'
 
 
 
 export default function LocationDrownDown() {
 
   return (
-     <HStack>
-       Your Cities
-
-       <Menu>
-  <MenuButton as={Button}>
-    Actions
-  </MenuButton>
-  <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
-  </MenuList>
-</Menu>
-     </HStack>
+    <Select placeholder='Select City' w={'35%'}>
+    <option value='option1'>Option 1</option>
+    <option value='option2'>Option 2</option>
+    <option value='option3'>Option 3</option>
+    </Select>
   )
 }

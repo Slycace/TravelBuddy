@@ -6,7 +6,7 @@ import LogoPlan from '../molecules/logoplan';
 
 export default function Navbar(props) {
   return(
-    <Flex w={'100%'} direction={'row'} backgroundColor={'lightblue'} h={50}>
+    <Flex w={'100%'} direction={'row'} backgroundColor={'lightblue'} h={'inherit'}>
       <LogoPlan/>
       <Spacer/>
       <LoginSignUp/>
