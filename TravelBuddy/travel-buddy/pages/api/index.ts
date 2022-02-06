@@ -1,5 +1,5 @@
 import axios from 'axios';
-var options = {
+let options = {
   method: 'GET',
   url: 'https://travel-advisor.p.rapidapi.com/attractions/list-by-latlng',
   params: {
@@ -11,18 +11,18 @@ var options = {
   },
   headers: {
     'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
-    'x-rapidapi-key': 'b634b2321amsh70ee256390be392p104db1jsnf0062fdf88e4'
+    'x-rapidapi-key': `${process.env.RAPID_API_KEY}`
   }
 };
 
 
-export default async function getAttractionsData(){
+export default async function getAttractionsData(coordinates){
     try {
+        options.params.longitude = coordinates.lng;
+        options.params.latitude = coordinates.lat;
         const { data:{ data }} = await axios.request(options)
-     //   console.log('before', data,'testing')
         return data;
     } catch(error) {
-
-      console.log(error);
+      console.log(error, 'error!');
     }
 }

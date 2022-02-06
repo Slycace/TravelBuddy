@@ -18,10 +18,10 @@ export default function PlannerTemplate() {
         borderColor={'blue'} h={'90vh'}>
           <Flex direction={'column'} width={'25vw'} borderColor={'blue'} borderWidth={1} >
             <Flex direction={'column'} h={'25%'} borderWidth={1} borderColor={'blue'}>
-            <BoxMarker/>
+             plugin1
             </Flex>
             <Flex direction={'column'} h={'75%'} borderWidth={1} borderColor={'blue'}>
-
+              plugin2
             </Flex>
           </Flex>
           <Flex direction={'column'} width={'75vw'} borderColor={'blue'} borderWidth={1} >

@@ -1,27 +1,41 @@
 import React, {useState, useRef, useEffect, MutableRefObject, useContext} from 'react';
-import { Input } from '@chakra-ui/react';
-import { Context } from '../GlobalState'
+import { Input, Box } from '@chakra-ui/react';
+import { Context, BoundsContext, CoordinatesContext } from '../GlobalState'
+import { Autocomplete } from '@react-google-maps/api';
 
 interface Props {
   placeholder:  string | 'search'
 }
 
 export default function Search(props: Props) {
-    const [state, setState] = useContext(Context);
+    const [autocomplete, setAutocomplete] = useState(null);
     const [input, setInput] = useState('');
+    const [bounds, setBounds] = useContext(BoundsContext);
+    const [coordinates, setCoordinates] = useContext(CoordinatesContext);
+    const ref = useRef(null);
+    const onLoad = (autoC) => {
+      setAutocomplete(autoC);
+    }
 
-    let inputElement:MutableRefObject<HTMLInputElement| null> = useRef(null);
-    useEffect(() => {
-      let autoComplete: google.maps.MVCObject | null = new google.maps.places.SearchBox(inputElement.current)
-    },[])
+    const onPlaceChange = () => {
+        const lat = autocomplete.getPlace().geometry.location.lat();
+        const lng = autocomplete.getPlace().geometry.location.lng();
+        if(ref.current.placeholder === 'Too') {
+            console.log('ran on too check')
+            setCoordinates({ lat: lat, lng: lng})
+        }
+    }
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setInput(e.target.value)
-    console.log(state,'testing state')
     }
 
    return (
-     <Input autoComplete='on' ref={inputElement} type={'text'} placeholder={props.placeholder} value={input}
-     onChange={handleChange}/>
+     <Box w={'inherit'}>
+     <Autocomplete onPlaceChanged={onPlaceChange} onLoad={onLoad}>
+     <Input autoComplete='on' type={'text'} placeholder={props.placeholder} value={input}
+     onChange={handleChange} ref={ref}/>
+      </Autocomplete>
+      </Box>
    )
 }

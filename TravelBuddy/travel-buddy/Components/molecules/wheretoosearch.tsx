@@ -1,11 +1,11 @@
 import React from "react";
-import { Flex, Box} from "@chakra-ui/react";
+import {HStack} from "@chakra-ui/react";
 import Search from "../atoms/search";
 
 
 export default function WhereTooSearch() {
   return(
-    <Flex
+    <HStack
     direction={'row'}
     backgroundColor={'white'}
     borderRadius={'5px'}
@@ -13,6 +13,6 @@ export default function WhereTooSearch() {
     alignSelf={'center'}>
         <Search placeholder="where"/>
         <Search placeholder="Too"/>
-    </Flex>
+    </HStack>
   )
 }
