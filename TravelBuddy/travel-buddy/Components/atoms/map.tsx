@@ -30,20 +30,12 @@ export default function Map() {
             setBounds({ne: e.marginBounds.ne, sw: e.marginBounds.sw});
         }}>
 
-            <Box lat={35.6762} lng={139.6503} onClick={(e ) => (console.log('hey'))}>
-              testing
-            </Box>
+            <BoxMarker lat={35.6762}
+            lng={139.6503}/>
 
-            {state?.map((place) => (
-              <Box
-              backgroundColor={'white'}
-              w={50}
-              h={50}
-              key={Number(place.name)}
-              lat={Number(place.latitude)} lng={place.longitude}>
-                    {place.name}
-              </Box>
-            ))}
+
+
+
 
         </GoogleMapReact>
 
