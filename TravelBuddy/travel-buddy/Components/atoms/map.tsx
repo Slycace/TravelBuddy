@@ -8,7 +8,7 @@ export default function Map() {
   const [state, setState] = useContext(Context);
   const [bounds, setBounds] = useContext(BoundsContext);
   const [coordinates, setCoordinates] = useContext(CoordinatesContext);
-      const defaultProps = {
+      let defaultProps = {
         center: {
           lat: coordinates.lat,
           lng: coordinates.lng,
@@ -22,7 +22,8 @@ export default function Map() {
   return (
       <Box w={'inherit'} h={'inherit'}>
         <GoogleMapReact
-        defaultCenter={defaultProps.center}
+        defaultCenter={coordinates}
+        center={coordinates}
         zoom={defaultProps.zoom}
         onChange={(e) => {
             setCoordinates({lat: e.center.lat, lng: e.center.lng});
@@ -34,9 +35,14 @@ export default function Map() {
             </Box>
 
             {state?.map((place) => (
-              <div key={place.name} lat={place.latitude} lng={place.longitude}>
-                  {place.name}
-              </div>
+              <Box
+              backgroundColor={'white'}
+              w={50}
+              h={50}
+              key={Number(place.name)}
+              lat={Number(place.latitude)} lng={place.longitude}>
+                    {place.name}
+              </Box>
             ))}
 
         </GoogleMapReact>

@@ -9,7 +9,7 @@ export const CoordinatesContext = createContext(initialCoords);
 export const Context = createContext([]);
 
 export default function GlobalState({ children }) {
-const [state, setState] = useState(null);
+const [state, setState] = useState([]);
 const [bounds, setBounds] = useState(null);
 const [coordinates, setCoordinates] = useState(initialCoords);
 

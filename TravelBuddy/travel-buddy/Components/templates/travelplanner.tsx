@@ -3,7 +3,7 @@ import { HStack, VStack, Box, Spacer, Flex } from "@chakra-ui/react";
 import Navbar from "../organisms/navbar";
 import CitiesAndPlaces from "../organisms/citiesandplaces";
 import Map from "../atoms/map";
-import BoxMarker from "../atoms/boxmarker";
+import AreaSearch from "../molecules/areasearch";
 
 export default function PlannerTemplate() {
 
@@ -18,7 +18,7 @@ export default function PlannerTemplate() {
         borderColor={'blue'} h={'90vh'}>
           <Flex direction={'column'} width={'25vw'} borderColor={'blue'} borderWidth={1} >
             <Flex direction={'column'} h={'25%'} borderWidth={1} borderColor={'blue'}>
-             plugin1
+             <AreaSearch/>
             </Flex>
             <Flex direction={'column'} h={'75%'} borderWidth={1} borderColor={'blue'}>
               plugin2
