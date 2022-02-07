@@ -11,7 +11,7 @@ export default function WhereTooSearch() {
     borderRadius={'5px'}
     width={'50vw'}
     alignSelf={'center'}>
-        <Search placeholder="where"/>
+        <Search placeholder="Where"/>
         <Search placeholder="Too"/>
     </HStack>
   )

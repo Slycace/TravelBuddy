@@ -1,28 +1,31 @@
+import { get } from 'http';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import getAttractionsData from './index'
 
-type Data = {
-  name: string,
-}
 
 let coordinates = null;
 
-export default function handler(
+export default  async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse,
 ) {
-  console.log(req.method,'method?')
-  if(req.method === 'POST') {
-    coordinates = req.body.coordinates;
-    res.status(200).json({pizza:'worked'})
-  } else if(req.method === 'GET') {
-    let data = getAttractionsData(coordinates)
-    data.then( (data) => {
-      res.status(200).json({ name: data })})
-    .catch((err) => (console.log(err)))
+  try {
+    if(req.method ==='POST') {
+        coordinates = req.body.coordinates;
+        res.status(200).json({message: 'dated posted'})
+    } else if (req.method === 'GET') {
+      const response = await getAttractionsData(coordinates);
+      const result = await response;
+      res.status(200).json({data: result})
+    }
+  } catch (err) {
+    if(req.method ==='POST') {
+      res.status(500).json({err: 'failed to post data'});
+    } else if (req.method ==='GET') {
+      res.status(500).json({err: 'failed to get data'})
+    }
+
   }
-
-
 
 
 }

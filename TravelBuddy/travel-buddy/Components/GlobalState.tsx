@@ -2,16 +2,16 @@ import { contextType } from "google-map-react";
 import axios from "axios";
 import React,{ useState, createContext, useEffect } from "react";
 
-
+const initialCoords = {lat: 35.6762, lng:139.6593}
 
 export const BoundsContext = createContext(null);
-export const CoordinatesContext = createContext(null);
+export const CoordinatesContext = createContext(initialCoords);
 export const Context = createContext([]);
 
 export default function GlobalState({ children }) {
 const [state, setState] = useState(null);
 const [bounds, setBounds] = useState(null);
-const [coordinates, setCoordinates] = useState(null);
+const [coordinates, setCoordinates] = useState(initialCoords);
 
  useEffect(() => {
     // fetch('/api/attractions')
@@ -21,17 +21,21 @@ const [coordinates, setCoordinates] = useState(null);
     // })
  },[])
 
+ const postCoords = async () => {
+   try {
+    let response = await axios.post('/api/attractions', {coordinates});
+    const res = await response;
+    const newresponse = await axios.get('/api/attractions')
+    const {data: {data}} = await newresponse;
+    console.log(data,'testing')
+    setState(data);
+   } catch(err) {
+     console.log(err)
+   }
+ }
+
  useEffect(() => {
-  axios.post('/api/attractions', {coordinates})
-  .then((data) => (
-    axios.get('/api/attractions')
-    .then((data) => {
-      setState(data.data.name)
-      console.log(state,'testing')
-    })
-    .catch((err) => (console.log(err,'testing err')))
-  ))
-  .catch((err) => (console.log(err)))
+  postCoords()
 
  },[coordinates])
 

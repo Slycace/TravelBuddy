@@ -24,6 +24,7 @@ export default function Search(props: Props) {
             console.log('ran on too check')
             setCoordinates({ lat: lat, lng: lng})
         }
+        setInput(autocomplete.getPlace().formatted_address)
     }
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {

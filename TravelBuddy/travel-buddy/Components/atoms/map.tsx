@@ -33,9 +33,9 @@ export default function Map() {
               testing
             </Box>
 
-            {state.map((place) => (
-              <div lat={place.latitude} lng={place.longitude}>
-                  pizzas
+            {state?.map((place) => (
+              <div key={place.name} lat={place.latitude} lng={place.longitude}>
+                  {place.name}
               </div>
             ))}
 
