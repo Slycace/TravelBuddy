@@ -26,15 +26,25 @@ export default function Map() {
         center={coordinates}
         zoom={defaultProps.zoom}
         onChange={(e) => {
-            setCoordinates({lat: e.center.lat, lng: e.center.lng});
+            // setCoordinates({lat: e.center.lat, lng: e.center.lng});
             setBounds({ne: e.marginBounds.ne, sw: e.marginBounds.sw});
         }}>
 
-            <BoxMarker lat={35.6762}
-            lng={139.6503}/>
 
 
-
+          {state.map((attraction, i) => {
+            return(
+            <BoxMarker
+            image={attraction?.photo?.images.small?.url}
+            key={i}
+            name={attraction.name}
+            lat={Number(attraction.latitude)}
+            lng={Number(attraction.longitude)}
+            rating={Number(attraction.rating)}
+            numReviews={Number(attraction.num_reviews)}
+            />
+            )
+          })}
 
 
         </GoogleMapReact>
