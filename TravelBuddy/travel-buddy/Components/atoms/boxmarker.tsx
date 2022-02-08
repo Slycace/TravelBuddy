@@ -77,7 +77,7 @@ export default function BoxMarker({name, image, rating, numReviews}: MarkerProps
       cursor={'pointer'}
       w={120}
       h={100}
-      backgroundColor='gray'
+      backgroundColor='white'
       direction={'column'}
       justifyContent={'center'}
       alignItems={'center'}

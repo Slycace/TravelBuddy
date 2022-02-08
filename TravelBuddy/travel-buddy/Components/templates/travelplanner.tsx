@@ -4,6 +4,7 @@ import Navbar from "../organisms/navbar";
 import CitiesAndPlaces from "../organisms/citiesandplaces";
 import Map from "../atoms/map";
 import AreaSearch from "../molecules/areasearch";
+import ScrollList from "../organisms/scrollList";
 
 export default function PlannerTemplate() {
 
@@ -21,7 +22,7 @@ export default function PlannerTemplate() {
              <AreaSearch/>
             </Flex>
             <Flex direction={'column'} h={'75%'} borderWidth={1} borderColor={'blue'}>
-              plugin2
+              <ScrollList/>
             </Flex>
           </Flex>
           <Flex direction={'column'} width={'75vw'} borderColor={'blue'} borderWidth={1} >
