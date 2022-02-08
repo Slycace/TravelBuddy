@@ -7,12 +7,13 @@ export  default function ScrollList() {
   const [state, setState] = useContext(Context);
 
   return(
-      <VStack w={'100%'} h={'100%'} 
+      <VStack w={'100%'} h={'100%'}
       direction={'column'}
       overflowY={'scroll'}
+      backgroundColor={'whitesmoke'}
       >
 
-          <Flex w={'80%'}
+          <Flex w={'90%'}
           direction={'column'}
           >
            {state.map((attraction, i) =>(
