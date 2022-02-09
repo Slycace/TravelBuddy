@@ -7,7 +7,7 @@ export default function TravelSearch() {
     <Flex
     backgroundImage={'JapanTouristSpot.jpg'}
     backgroundSize={'100% 100%'}
-    h="calc(100vh - 50px)"
+    h="calc(100vh - 30px)"
     w={'100vw'}
     objectFit={'cover'}
     direction={'column'}

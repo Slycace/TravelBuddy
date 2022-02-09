@@ -50,7 +50,7 @@ export default function Map() {
 
 
   return (
-      <Box w={'100%'} h={'100%'}>
+      <Box w={'95%'} h={'95%'}>
         <GoogleMapReact
         onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         defaultCenter={coordinates}

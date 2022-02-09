@@ -38,7 +38,7 @@ export default function Search(props: Props) {
     }
 
    return (
-     <Box w={'inherit'}>
+     <Box w={'inherit'} backgroundColor={'white'}>
      <Autocomplete onPlaceChanged={onPlaceChange} onLoad={onLoad}>
      <Input autoComplete='on' type={'text'} placeholder={props.placeholder} value={input}
      onChange={handleChange} ref={ref}/>

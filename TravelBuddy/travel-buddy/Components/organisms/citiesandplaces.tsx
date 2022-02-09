@@ -13,8 +13,6 @@ export default function CitiesAndPlaces() {
       width='100%'
       height='100%'
       >
-      <LocationDrownDown/>
-      <LocationDrownDown/>
 
       </Flex>
 

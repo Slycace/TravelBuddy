@@ -10,30 +10,29 @@ export default function PlannerTemplate() {
 
   return(
       <Flex className="mainDiv" direction={'column'} w={'100%'} h={'100%'} >
-        <Box className="navDiv" h={50} borderWidth={1} borderColor={'blue'} >
+        <Box className="navDiv" h={30}>
             <Navbar/>
         </Box>
         <Flex className="plannerDiv"
         direction={'row'}
-        borderWidth={1}
-        borderColor={'blue'}
-        height="calc(100vh - 50px)"
+
+        height="calc(100vh - 30px)"
         >
-          <Flex direction={'column'} width={'25vw'} borderColor={'blue'} borderWidth={1} >
-            <Flex direction={'column'} h={'25%'} borderWidth={1} borderColor={'blue'}>
+          <Flex direction={'column'} width={'25vw'}>
+            <Flex direction={'column'} h={'25%'} >
              <AreaSearch/>
             </Flex>
-            <Flex direction={'column'} h={'75%'} borderWidth={1} borderColor={'blue'}>
+            <Flex direction={'column'} h={'75%'}>
               <ScrollList/>
             </Flex>
           </Flex>
-          <Flex direction={'column'} width={'75vw'} borderColor={'blue'} borderWidth={1} >
-            <Flex direction={'column'} h={'10%'} borderColor={'blue'}
-            borderWidth={'1px'}>
+          <Flex direction={'column'} width={'75vw'}>
+            <Flex direction={'column'} h={'5%'}>
              <CitiesAndPlaces/>
             </Flex>
-            <Flex direction={'column'} h={'90%'} borderColor={'blue'}
-            borderWidth={'1px'}>
+            <Flex direction={'column'} h={'95%'}
+            borderWidth={'1px'}
+            alignItems={'center'}>
              <Map/>
             </Flex>
           </Flex>
