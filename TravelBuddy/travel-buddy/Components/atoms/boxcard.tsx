@@ -23,6 +23,7 @@ export default function BoxCard({attraction}) {
     marginTop={1}
     fontSize={'lg'}
     w={'100%'}
+    as={'abbr'}
     >
     {attraction?.name}
     </Text>

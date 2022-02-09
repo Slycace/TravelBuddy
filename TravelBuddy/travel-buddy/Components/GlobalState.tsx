@@ -7,11 +7,14 @@ const initialCoords = {lat: 35.6762, lng:139.6593}
 export const BoundsContext = createContext(null);
 export const CoordinatesContext = createContext(initialCoords);
 export const Context = createContext([]);
+export const CitiesContext = createContext([])
 
 export default function GlobalState({ children }) {
 const [state, setState] = useState([]);
 const [bounds, setBounds] = useState(null);
 const [coordinates, setCoordinates] = useState(initialCoords);
+const [cities, setCities] = useState([0,0,0,0]);
+
 
  useEffect(() => {
     // fetch('/api/attractions')
@@ -37,9 +40,11 @@ const [coordinates, setCoordinates] = useState(initialCoords);
  useEffect(() => {
   postCoords()
 
+
  },[coordinates])
 
 return (
+  <CitiesContext.Provider value={[cities, setCities]}>
   <CoordinatesContext.Provider value={[coordinates,setCoordinates]}>
   <BoundsContext.Provider value={[bounds, setBounds]}>
   <Context.Provider value={[state,setState]}>
@@ -47,6 +52,7 @@ return (
   </Context.Provider>
   </BoundsContext.Provider>
   </CoordinatesContext.Provider>
+  </CitiesContext.Provider>
 )
 
 

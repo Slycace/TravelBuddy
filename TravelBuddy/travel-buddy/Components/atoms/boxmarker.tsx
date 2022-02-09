@@ -69,6 +69,7 @@ export default function BoxMarker({name, image, rating, numReviews}: MarkerProps
 
   return (
       <Flex
+      borderRadius={2}
       position={'absolute'}
       transform={'translate(-50%, -50%)'}
       zIndex={1}
@@ -81,11 +82,14 @@ export default function BoxMarker({name, image, rating, numReviews}: MarkerProps
       direction={'column'}
       justifyContent={'center'}
       alignItems={'center'}
+      paddingBottom={2}
       >
-
-          <Text>
+      <Box h={'25%'} marginTop={1}>
+      <Text fontFamily={'sans-serif'}>
             {name}
           </Text>
+      </Box>
+
 
 
         <Image
@@ -96,8 +100,11 @@ export default function BoxMarker({name, image, rating, numReviews}: MarkerProps
         src={image}
         alt={'test'}/>
 
+        <Box h={'15%'}>
+        <Rating
+        rating={rating} numReviews={numReviews}/>
+        </Box>
 
-           <Rating rating={rating} numReviews={numReviews}/>
 
       </Flex>
   );

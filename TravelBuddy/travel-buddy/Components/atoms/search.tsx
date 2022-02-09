@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect, MutableRefObject, useContext} from 'react';
 import { Input, Box } from '@chakra-ui/react';
-import { Context, BoundsContext, CoordinatesContext } from '../GlobalState'
+import { Context, BoundsContext, CoordinatesContext, CitiesContext } from '../GlobalState'
 import { Autocomplete } from '@react-google-maps/api';
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 }
 
 export default function Search(props: Props) {
+    const [cities, setCities] = useContext(CitiesContext);
     const [autocomplete, setAutocomplete] = useState(null);
     const [input, setInput] = useState('');
     const [bounds, setBounds] = useContext(BoundsContext);
@@ -17,15 +18,20 @@ export default function Search(props: Props) {
       setAutocomplete(autoC);
     }
 
+
+
+
     const onPlaceChange = () => {
         const lat = autocomplete.getPlace().geometry.location.lat();
         const lng = autocomplete.getPlace().geometry.location.lng();
         if(ref.current.placeholder === 'Too') {
-            console.log('ran on too check')
+            setCities([...cities,[lat],[lng]])
             setCoordinates({ lat: lat, lng: lng})
+        } else {
+          setCities([...cities,[lat],[lng]])
         }
         setInput(autocomplete.getPlace().formatted_address)
-    }
+  }
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setInput(e.target.value)

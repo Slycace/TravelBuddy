@@ -1,12 +1,16 @@
-import React,{useState, useEffect, useContext} from 'react';
-import GoogleMapReact from 'google-map-react';
+import React,{useState, useEffect, useContext, useRef} from 'react';
+import GoogleMapReact
+from 'google-map-react';
+import { Polyline } from '@react-google-maps/api';
 import { Box } from '@chakra-ui/react';
 import BoxMarker from './boxmarker';
-import { BoundsContext, CoordinatesContext, Context } from '../GlobalState';
+import { BoundsContext, CoordinatesContext, Context, CitiesContext } from '../GlobalState';
 
 export default function Map() {
+  const [cities, setCities] = useContext(CitiesContext);
   const [state, setState] = useContext(Context);
   const [bounds, setBounds] = useContext(BoundsContext);
+  let mapRef = useRef();
   const [coordinates, setCoordinates] = useContext(CoordinatesContext);
       let defaultProps = {
         center: {
@@ -16,12 +20,39 @@ export default function Map() {
         zoom: 10
       }
 
+      let polyLineCoordinates = [
+        { lat: 37.7749, lng: -122.4194},
+        { lat: coordinates.lat, lng: coordinates.lng},
 
+      ]
+
+
+      const handleApiLoaded = (map, maps) => {
+        mapRef.current = map;
+        const newMap = new google.maps.Polyline({
+          path:polyLineCoordinates,
+          strokeColor: "#FF0000",
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+        });
+        newMap.setMap(map);
+      }
+
+      useEffect(() => {
+        const newMap = new google.maps.Polyline({
+          path:polyLineCoordinates,
+          strokeColor: "#FF0000",
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+        });
+        newMap.setMap(mapRef.current);
+      },[coordinates])
 
 
   return (
       <Box w={'inherit'} h={'inherit'}>
         <GoogleMapReact
+        onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         defaultCenter={coordinates}
         center={coordinates}
         zoom={defaultProps.zoom}
@@ -29,8 +60,6 @@ export default function Map() {
             // setCoordinates({lat: e.center.lat, lng: e.center.lng});
             setBounds({ne: e.marginBounds.ne, sw: e.marginBounds.sw});
         }}>
-
-
 
           {state.map((attraction, i) => {
             return(
