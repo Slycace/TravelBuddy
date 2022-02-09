@@ -31,7 +31,7 @@ export default function Map() {
         mapRef.current = map;
         const newMap = new google.maps.Polyline({
           path:polyLineCoordinates,
-          strokeColor: "#FF0000",
+          strokeColor: "blue",
           strokeOpacity: 0.8,
           strokeWeight: 2,
         });
@@ -41,7 +41,7 @@ export default function Map() {
       useEffect(() => {
         const newMap = new google.maps.Polyline({
           path:polyLineCoordinates,
-          strokeColor: "#FF0000",
+          strokeColor: "blue",
           strokeOpacity: 0.8,
           strokeWeight: 2,
         });
@@ -50,7 +50,7 @@ export default function Map() {
 
 
   return (
-      <Box w={'inherit'} h={'inherit'}>
+      <Box w={'100%'} h={'100%'}>
         <GoogleMapReact
         onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         defaultCenter={coordinates}
@@ -64,7 +64,7 @@ export default function Map() {
           {state.map((attraction, i) => {
             return(
             <BoxMarker
-            image={attraction?.photo?.images.small?.url}
+            image={attraction?.photo?.images.small?.url || 'no-image.jpg'}
             key={i}
             name={attraction.name}
             lat={Number(attraction.latitude)}
