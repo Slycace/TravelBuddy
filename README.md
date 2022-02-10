@@ -25,7 +25,7 @@
 
   <p align="center">
     The travel app designed to make your travels easier!
-    <br />
+    <br TODO/>
     <br />
     <br />
   </p>
