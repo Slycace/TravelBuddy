@@ -43,7 +43,7 @@ these spots and pull up the names, addresses, phone numbers, and hours of servic
 ![ff66b0205ff10fbe0ef1543d09dcb813](https://user-images.githubusercontent.com/83367259/153133551-73213a79-4f45-47f6-b1a5-9268d4407f59.jpg)
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>![Uploading 7432e521735a04e892f8fd20007538fd.jpg…]()
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ### Built With
